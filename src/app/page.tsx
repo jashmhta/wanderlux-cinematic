@@ -2,8 +2,9 @@ import { Hero } from "@/components/Hero";
 import { Marquee } from "@/components/Marquee";
 import { Intro } from "@/components/Intro";
 import { Destinations } from "@/components/Destinations";
+import { Atlas } from "@/components/Atlas";
 import { Packages } from "@/components/Packages";
-import { Experiences } from "@/components/Experiences";
+import { Moments } from "@/components/Moments";
 import { VideoFeature } from "@/components/VideoFeature";
 import { Testimonials } from "@/components/Testimonials";
 import { CTA } from "@/components/CTA";
@@ -16,8 +17,9 @@ export default function Home() {
       <Marquee />
       <Intro />
       <Destinations />
+      <Atlas />
       <Packages />
-      <Experiences />
+      <Moments />
       <VideoFeature />
       <Testimonials />
       <CTA />

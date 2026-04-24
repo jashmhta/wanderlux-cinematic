@@ -34,21 +34,21 @@ export function Destinations() {
       id="destinations"
       className="relative border-t border-[var(--line)] bg-[var(--bg)]"
     >
-      <div className="mx-auto max-w-[1400px] px-6 pt-28 md:px-10 md:pt-40">
+      <div className="mx-auto max-w-[1400px] px-5 pt-20 sm:px-6 sm:pt-28 md:px-10 md:pt-40">
         <Reveal>
-          <p className="mb-6 font-mono text-[11px] uppercase tracking-[0.24em] text-[var(--ink-muted)]">
+          <p className="mb-5 font-mono text-[11px] uppercase tracking-[0.24em] text-[var(--ink-muted)]">
             02 — Destinations
           </p>
         </Reveal>
         <TextReveal
           as="h2"
-          text="Eight corners of the map we know by heart."
-          className="font-display text-[clamp(32px,5vw,80px)] font-[300] leading-[1.02] tracking-[-0.02em] text-[var(--ink)]"
+          text="Ten corners of the map we know by heart."
+          className="font-display text-[clamp(30px,5vw,80px)] font-[300] leading-[1.02] tracking-[-0.02em] text-[var(--ink)]"
         />
       </div>
 
       {/* Sticky split layout: image pinned left, scrollable list right */}
-      <div className="mx-auto mt-20 grid max-w-[1400px] gap-10 px-6 md:grid-cols-[1.1fr_1fr] md:px-10">
+      <div className="mx-auto mt-12 grid max-w-[1400px] gap-8 px-5 sm:mt-16 sm:px-6 md:mt-20 md:grid-cols-[1.1fr_1fr] md:gap-10 md:px-10">
         <div className="sticky top-24 hidden h-[78vh] self-start overflow-hidden rounded-2xl bg-[var(--bg-elev)] md:block">
           {destinations.map((d, i) => (
             <div
@@ -56,8 +56,7 @@ export function Destinations() {
               className="absolute inset-0 transition-all duration-1000 ease-[cubic-bezier(0.2,0.7,0.2,1)]"
               style={{
                 opacity: active === i ? 1 : 0,
-                transform:
-                  active === i ? "scale(1)" : "scale(1.06)",
+                transform: active === i ? "scale(1)" : "scale(1.06)",
               }}
             >
               <Image
@@ -74,7 +73,7 @@ export function Destinations() {
                   <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-white/70">
                     {d.region} · {d.country}
                   </p>
-                  <p className="mt-3 max-w-sm font-display text-[22px] font-[300] leading-[1.15]">
+                  <p className="mt-3 max-w-sm font-display text-[20px] font-[300] leading-[1.15] md:text-[22px]">
                     {d.tagline}
                   </p>
                 </div>
@@ -92,18 +91,19 @@ export function Destinations() {
             <li
               key={d.slug}
               data-dest
+              data-cursor
               onMouseEnter={() => setActive(i)}
-              className={`group relative grid grid-cols-[auto_1fr_auto] items-baseline gap-6 border-b border-[var(--line)] py-8 transition-colors md:py-10 ${
+              className={`group relative grid grid-cols-[auto_1fr_auto] items-baseline gap-4 border-b border-[var(--line)] py-7 transition-colors sm:gap-6 md:py-10 ${
                 active === i ? "text-[var(--ink)]" : "text-[var(--ink-muted)]"
               }`}
             >
               <span className="font-mono text-[10px] uppercase tracking-[0.22em] opacity-60">
-                0{i + 1}
+                {String(i + 1).padStart(2, "0")}
               </span>
               <div>
                 <h3
-                  className={`font-display text-[clamp(32px,4vw,60px)] font-[300] leading-[1] tracking-[-0.015em] transition-transform duration-700 ${
-                    active === i ? "translate-x-3" : "translate-x-0"
+                  className={`font-display text-[clamp(28px,4.2vw,60px)] font-[300] leading-[1] tracking-[-0.015em] transition-transform duration-700 ${
+                    active === i ? "translate-x-2 sm:translate-x-3" : "translate-x-0"
                   }`}
                 >
                   {d.name}
@@ -112,7 +112,7 @@ export function Destinations() {
                   {d.country} · {d.tagline}
                 </p>
                 {/* Mobile image */}
-                <div className="relative mt-5 aspect-[4/3] w-full overflow-hidden rounded-xl md:hidden">
+                <div className="relative mt-4 aspect-[4/3] w-full overflow-hidden rounded-xl md:hidden">
                   <Image
                     src={d.image}
                     alt={d.name}
@@ -120,6 +120,10 @@ export function Destinations() {
                     sizes="100vw"
                     className="object-cover"
                   />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/55 to-transparent" />
+                  <span className="absolute bottom-3 left-3 font-mono text-[9px] uppercase tracking-[0.24em] text-white/80">
+                    {d.lat} · {d.lng}
+                  </span>
                 </div>
               </div>
               <span className="hidden font-mono text-[10px] uppercase tracking-[0.22em] md:block">

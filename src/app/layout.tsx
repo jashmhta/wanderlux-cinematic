@@ -5,6 +5,9 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { Grain } from "@/components/Grain";
 import { Nav } from "@/components/Nav";
+import { Loader } from "@/components/Loader";
+import { Cursor } from "@/components/Cursor";
+import { ScrollProgress } from "@/components/ScrollProgress";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -50,8 +53,11 @@ export default function RootLayout({
       </head>
       <body className="relative min-h-full bg-[var(--bg)] text-[var(--ink)]">
         <ThemeProvider>
+          <Loader />
           <SmoothScroll>
             <Grain />
+            <Cursor />
+            <ScrollProgress />
             <Nav />
             {children}
           </SmoothScroll>

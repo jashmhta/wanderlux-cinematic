@@ -110,6 +110,28 @@ export const destinations: Destination[] = [
     image:
       "https://images.unsplash.com/photo-1504829857797-ddff29c27927?auto=format&fit=crop&w=1600&q=80",
   },
+  {
+    slug: "atacama",
+    name: "Atacama",
+    region: "South America",
+    country: "Chile",
+    tagline: "The driest sky. The clearest stars.",
+    lat: "23.7°S",
+    lng: "68.2°W",
+    image:
+      "https://images.unsplash.com/photo-1518544801976-3e159e50e5bb?auto=format&fit=crop&w=1600&q=80",
+  },
+  {
+    slug: "lofoten",
+    name: "Lofoten",
+    region: "Scandinavia",
+    country: "Norway",
+    tagline: "Black granite spires over a sleeping fjord.",
+    lat: "68.3°N",
+    lng: "14.6°E",
+    image:
+      "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1600&q=80",
+  },
 ];
 
 export const packages: Package[] = [
@@ -179,6 +201,28 @@ export const packages: Package[] = [
     image:
       "https://images.unsplash.com/photo-1533106497176-45ae19e68ba2?auto=format&fit=crop&w=1400&q=80",
   },
+  {
+    slug: "namib-red-silence",
+    title: "Namib, Red Silence",
+    location: "Sossusvlei → Swakopmund",
+    duration: "8 days",
+    from: "$5,960",
+    rating: 4.93,
+    highlights: ["Sunrise dunes", "Desert airstrip", "Star bivouac"],
+    image:
+      "https://images.unsplash.com/photo-1547234935-80c7145ec969?auto=format&fit=crop&w=1400&q=80",
+  },
+  {
+    slug: "atacama-starlight",
+    title: "Atacama, Starlight",
+    location: "San Pedro → Salar",
+    duration: "7 days",
+    from: "$5,380",
+    rating: 4.91,
+    highlights: ["Altiplano lagoons", "Geyser dawn", "Observatory night"],
+    image:
+      "https://images.unsplash.com/photo-1518509562904-e7ef99cddc85?auto=format&fit=crop&w=1400&q=80",
+  },
 ];
 
 export interface Testimonial {
@@ -217,4 +261,92 @@ export const testimonials: Testimonial[] = [
 export const heroVideos: string[] = [
   "https://videos.pexels.com/video-files/2169880/2169880-uhd_3840_2160_30fps.mp4",
   "https://videos.pexels.com/video-files/4763824/4763824-uhd_3840_2160_24fps.mp4",
+  "https://videos.pexels.com/video-files/3141207/3141207-uhd_3840_2160_25fps.mp4",
+];
+
+export interface Moment {
+  label: string;
+  caption: string;
+  media: { type: "video"; src: string; poster: string } | { type: "image"; src: string };
+  span?: string;
+  aspect?: string;
+}
+
+export const moments: Moment[] = [
+  {
+    label: "01 / Ocean at the edge",
+    caption: "Lofoten, Norway",
+    media: {
+      type: "video",
+      src: "https://videos.pexels.com/video-files/3190131/3190131-uhd_3840_2160_25fps.mp4",
+      poster:
+        "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1400&q=80",
+    },
+    span: "md:col-span-7 md:row-span-2",
+    aspect: "aspect-[4/5]",
+  },
+  {
+    label: "02 / Morning on the steppe",
+    caption: "Altiplano, Chile",
+    media: {
+      type: "image",
+      src: "https://images.unsplash.com/photo-1500964757637-c85e8a162699?auto=format&fit=crop&w=1400&q=80",
+    },
+    span: "md:col-span-5",
+    aspect: "aspect-[4/3]",
+  },
+  {
+    label: "03 / Cliff walk",
+    caption: "Faroe Islands",
+    media: {
+      type: "video",
+      src: "https://videos.pexels.com/video-files/6981411/6981411-hd_1920_1080_30fps.mp4",
+      poster:
+        "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1400&q=80",
+    },
+    span: "md:col-span-5",
+    aspect: "aspect-[5/6]",
+  },
+  {
+    label: "04 / Teahouse, 06:14",
+    caption: "Kyoto, Japan",
+    media: {
+      type: "image",
+      src: "https://images.unsplash.com/photo-1492571350019-22de08371fd3?auto=format&fit=crop&w=1400&q=80",
+    },
+    span: "md:col-span-4",
+    aspect: "aspect-[4/5]",
+  },
+  {
+    label: "05 / Red dune, 17:52",
+    caption: "Sossusvlei, Namibia",
+    media: {
+      type: "video",
+      src: "https://videos.pexels.com/video-files/2421545/2421545-uhd_2732_1440_25fps.mp4",
+      poster:
+        "https://images.unsplash.com/photo-1547234935-80c7145ec969?auto=format&fit=crop&w=1400&q=80",
+    },
+    span: "md:col-span-8",
+    aspect: "aspect-[16/9]",
+  },
+  {
+    label: "06 / The long road",
+    caption: "Ladakh, India",
+    media: {
+      type: "image",
+      src: "https://images.unsplash.com/photo-1519834584171-e9ce361c1b63?auto=format&fit=crop&w=1400&q=80",
+    },
+    span: "md:col-span-6",
+    aspect: "aspect-[3/2]",
+  },
+  {
+    label: "07 / Monsoon, slow",
+    caption: "Kerala, India",
+    media: {
+      type: "image",
+      src: "https://images.unsplash.com/photo-1519861531473-9200262188bf?auto=format&fit=crop&w=1400&q=80",
+    },
+    span: "md:col-span-6",
+    aspect: "aspect-[3/2]",
+  },
 ];
