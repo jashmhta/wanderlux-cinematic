@@ -44,3 +44,7 @@ next-env.d.ts
 /evidence/
 /test-plan.md
 /test-report.md
+
+# Vercel
+.vercel
+out-deploy/
